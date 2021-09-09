@@ -5,17 +5,22 @@ import Bedroom from './Bedroom';
 import Bath from './Bath';
 
 const FloorPlan = () => {
-    //const [size, setBath] = useState('half')
-    const size = 'Half'
+    const size = (size) => {
+        return size
+    }
     //const [bedNum, setBedNum] = useState(1)
-    const bedNum = 1
+    const bedNum = (num) => {
+        return num
+    }
 
     return (
         <div>
-        <Kitchen />
         <LivingRoom />
-        <Bedroom bedNum={bedNum}/>
-        <Bath size={size}/>
+        <Bedroom bedNum={bedNum(1)}/>
+        <Bath size={size("Full")}/>
+        <Kitchen />
+        <Bedroom bedNum={bedNum(2)}/>
+        <Bath size={size("Half")}/>
            
         </div>
     );
